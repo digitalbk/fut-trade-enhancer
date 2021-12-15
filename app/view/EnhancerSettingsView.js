@@ -43,71 +43,71 @@ EnhancerSettingsView.prototype._generate = function _generate() {
           <h1 class="secondary">Enhancer Settings</h1>
           </div>
           ${generateToggleInput(
-            "Show FutBin Price",
+            "Afficher le prix FutBin",
             { idFutBinPrice },
-            "Shows Futbin Price and marks Bargains in searches",
+            "Affiche le prix Futbin et les bonnes affaires dans les recherches",
             "idFutBinPrice" in enhancerSetting
               ? enhancerSetting["idFutBinPrice"]
               : true
           )}
           ${generateToggleInput(
-            "Mark Bid Bargains",
+            "Marquer les offres d'enchères",
             { idBidBargain },
-            "Highlights Bargains based on current bid",
+            "Bonnes affaires basées sur l'enchère actuelle",
             "idBidBargain" in enhancerSetting
               ? enhancerSetting["idBidBargain"]
               : false
           )}
           ${generateTextInput(
-            "Bargains Threshold Percent",
+            "Pourcentage de seuil de bonnes affaires",
             95,
             { idBarginThreshold },
-            "Highlight items if price below or equal to this percent of FUTBIN price",
+            "Mettez en surbrillance les articles si le prix est inférieur ou égal au pourcentage du prix FUTBIN",
             enhancerSetting["idBarginThreshold"]
           )}         
           ${generateTextInput(
-            "FUTBIN Sale Percent",
+            "Pourcentage de vente FUTBIN",
             95,
             { idFutBinPercent },
-            "Sale Price percent for Relist FUTBIN",
+            "Pourcentage du prix de vente pour la remise en vente FUTBIN",
             enhancerSetting["idFutBinPercent"]
           )}
           ${generateTextInput(
-            "Rating",
+            "Note",
             "",
             { idMinRating },
-            "Will only show players with rating as this value in searches",
+            "Affichera uniquement les joueurs avec cette note dans les recherches",
             enhancerSetting["idMinRating"],
             "text"
           )}
           ${generateTextInput(
-            "FUTBIN List Duration",
+            "Durée de la liste FUTBIN",
             "1H",
             { idFutBinDuration },
-            "List Duration when listing using Re-list FUTBIN",
+            "Durée de la liste lors du Re-list FUTBIN",
             enhancerSetting["idFutBinDuration"],
             "text"
           )}
           ${generateToggleInput(
-            "Hide Bin Popup",
+            "Masquer la fenêtre de la corbeille",
             { idHideBinPop },
-            "Automatically confirms the Bin popup",
+            "Confirme automatiquement la fenêtre Bin",
             "idHideBinPop" in enhancerSetting
               ? enhancerSetting["idHideBinPop"]
               : false
           )}
           ${generateToggleInput(
-            "Hide Transfer full Popup",
+            "Masquer la fenêtre du transfert plein",
             { idTransferFullPop },
-            "Hides transfer full list popup",
+            "Masque la fenêtre de la liste transferts plein",
             "idTransferFullPop" in enhancerSetting
               ? enhancerSetting["idTransferFullPop"]
               : false
           )}
           ${generateToggleInput(
-            "Show only Bargains",
+            "Afficher seulement les bonnes affaires",
             { idOnlyBargain },
-            "Show only cards lesser than FUTBIN in searches",
+            "Afficher uniquement les cartes inférieures à FUTBIN dans les recherches",
             "idOnlyBargain" in enhancerSetting
               ? enhancerSetting["idOnlyBargain"]
               : false
@@ -115,7 +115,7 @@ EnhancerSettingsView.prototype._generate = function _generate() {
           <div class="enhancer-save-btn">
             ${generateButton(
               idSaveSettingsBtn,
-              "Save",
+              "Sauvegarder",
               async () => {
                 showLoader();
                 await insertSettings(
